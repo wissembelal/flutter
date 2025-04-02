@@ -1,0 +1,53 @@
+import 'package:firstproject/components/week_days_card.dart';
+import 'package:firstproject/models/meal.dart';
+import 'package:firstproject/models/meals_of_a_day_meals.dart';
+import 'package:flutter/material.dart';
+
+
+ 
+class HomeScreen extends StatelessWidget {
+
+HomeScreen({super.key});
+ 
+final List<MealsOfADay> week_days_list = [
+MealsOfADay(day:"Saturday", listOfMealsForADay: [
+Meal{name: 'Pizza Poulet', 
+imgPath: 'images/pizza.jpg',
+listOfIngridient: ["Sauce Tomate","herbes de province","Poulet"]}]}, name: '')
+
+];
+
+ 
+@override
+Widget build(BuildContext context) {
+return Scaffold(
+appBar: AppBar(
+title: const Center(
+child: Text(
+"Home page",
+style: TextStyle(
+fontSize: 30,),
+)),
+actions: [
+IconButton(
+icon: Icon(Icons.exit_to_app),
+onPressed: () {},
+),
+]),
+body: ListView.builder(
+physics: const BouncingScrollPhysics(
+parent: AlwaysScrollableScrollPhysics(),
+),
+scrollDirection: Axis.vertical,
+shrinkWrap: true,
+itemCount: week_days_list.length,
+itemBuilder: (context, index) {
+return WeekDaysCard(
+day: week_days_list[index],
+);
+},
+),
+);
+}
+}
+
