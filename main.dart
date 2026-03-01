@@ -32,7 +32,7 @@ theme: ThemeData(
 appBarTheme: const AppBarTheme(
 backgroundColor: Colors.black,
 titleTextStyle: TextStyle(
-color: Colors.orange,
+color: Colors.blue,
 fontSize: 17,
 fontWeight: FontWeight.bold,),
 iconTheme: IconThemeData(color: Colors.orange),
@@ -44,4 +44,5 @@ home:  HomeScreen(),
 );
 }
 }
+
 
